@@ -31,7 +31,6 @@ public class Asset {
     }
 
     public double getValue() {
-        double cost = 0;
-        return cost;}
+        return originalCost;}
 
 }

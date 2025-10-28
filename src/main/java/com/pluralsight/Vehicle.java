@@ -33,20 +33,25 @@ public class Vehicle extends Asset{
         this.year = year;
         this.odometer = odometer;
     }
-    public Vehicle(String description,
-                   String dateAcquired,
-                   double originalCost) {
-        super(description, dateAcquired, originalCost);
-
-
-    }
 
     @Override
     public double getValue() {
-        if ((2025-getYear()<=3)){ return getValue()*0.03*(2025-getYear());}
-        else if (2025-getYear()<=6){ return getValue()*0.03*(2025-getYear());}
-        else if (2025-getYear()<=10){ return getValue()*0.03*(2025-getYear());}
-        else{ return getValue()*0.03*(2025-getYear());}
+        double reducedValue;
+        if ((2025-getYear()<=3)){
+            reducedValue = getOriginalCost()*0.03*(2025-getYear());
+            return reducedValue;}
+        else if (2025-getYear()<=6){
+            reducedValue = getOriginalCost()*0.03*(2025-getYear());
+            return reducedValue;
+            }
+        else if (2025-getYear()<=10){
+            reducedValue = getOriginalCost()*0.03*(2025-getYear());
+            return reducedValue;
+            }
+        else{
+            reducedValue = getOriginalCost()*0.03*(2025-getYear());
+            return reducedValue;
+            }
         // A car's value is determined as
         // 0-3 years old - 3% reduced value of cost per year
         // 4-6 years old - 6% reduced value of cost per year
