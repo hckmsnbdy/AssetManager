@@ -50,6 +50,10 @@ public class House extends Asset{
 
     @Override
     public double getValue() {
+        if (getValue()>180){setCondition(1);}
+        else if (getValue()>130){setCondition(2);}
+        else if (getValue()>90){setCondition(3);}
+        else if (getValue()>80){setCondition(4);}
         // A house's value is determined as
         // $180.00 per square foot (excellent)
         // $130.00 per square foot (good)
@@ -58,7 +62,5 @@ public class House extends Asset{
         // PLUS 25 cents per square foot of lot size
         return super.getValue();
     }
-
-    //    public double getValue
 
 }

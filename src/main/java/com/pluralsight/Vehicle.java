@@ -43,6 +43,10 @@ public class Vehicle extends Asset{
 
     @Override
     public double getValue() {
+        if ((2025-getYear()<=3)){ return getValue()*0.03*(2025-getYear());}
+        else if (2025-getYear()<=6){ return getValue()*0.03*(2025-getYear());}
+        else if (2025-getYear()<=10){ return getValue()*0.03*(2025-getYear());}
+        else{ return getValue()*0.03*(2025-getYear());}
         // A car's value is determined as
         // 0-3 years old - 3% reduced value of cost per year
         // 4-6 years old - 6% reduced value of cost per year
@@ -50,6 +54,5 @@ public class Vehicle extends Asset{
         // over 10 years old - $1000.00
         // MINUS reduce final value by 25% if over 100,000 miles
         // unless makeModel contains word Honda or Toyota
-        return super.getValue();
     }
 }
